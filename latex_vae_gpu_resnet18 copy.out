@@ -1,0 +1,26 @@
+Loaded VAE cfg: {'batch_size': 128, 'num_epochs': 10, 'learning_rate': 5e-05, 'latent_dim': 128, 'd_model': 512, 'nhead': 8, 'num_layers': 6, 'max_len': 512, 'weight_decay': 0.01, 'warmup_ratio': 0.1, 'dropout': 0.2}
+epoch 01 | loss=0.1027
+Saved checkpoint to image_encoder_resnet18_epoch_01.pth
+New best model saved with loss 0.1027
+epoch 02 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_02.pth
+New best model saved with loss 0.0001
+epoch 03 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_03.pth
+New best model saved with loss 0.0001
+epoch 04 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_04.pth
+New best model saved with loss 0.0001
+epoch 05 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_05.pth
+New best model saved with loss 0.0001
+epoch 06 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_06.pth
+New best model saved with loss 0.0001
+epoch 07 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_07.pth
+epoch 08 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_08.pth
+New best model saved with loss 0.0001
+epoch 09 | loss=0.0001
+Saved checkpoint to image_encoder_resnet18_epoch_09.pth

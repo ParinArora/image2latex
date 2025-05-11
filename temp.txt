@@ -1,0 +1,19 @@
+python train_image_encoder.py \
+  --latex_file train.txt \
+  --png_names_file train_pngs.txt \
+  --png_dir ./pngs \
+  --vae_ckpt best_latex_vae.pth \
+  --kl_weight 1.0 \
+  --warmup_ratio 0.1
+
+From there, monitor KL vs. recon in TensorBoard. If KL_loss/Reconstruction_loss ≫ 1, reduce kl_weight; if it's ≪ 1, increase it. Adjust your warmup_ratio if the KL term still spikes abruptly in the first few batches.
+
+
+python train_image_encoder.py \
+  --latex_file /path/to/your/train.txt \
+  --png_names_file /path/to/your/train_pngs.txt \
+  --png_dir /path/to/your/pngs \
+  --vae_ckpt /path/to/your/best_latex_vae.pth \
+  --resume_from image_encoder_resnet18_epoch_03.pth \
+  --kl_weight 0.02 \
+  --warmup_ratio 0.1

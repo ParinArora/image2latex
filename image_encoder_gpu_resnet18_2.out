@@ -1,0 +1,6 @@
+TensorBoard not available. Will use basic file logging instead.
+Using basic file logging. Logs will be saved to logs/image_encoder/
+Loaded VAE cfg: {'batch_size': 128, 'num_epochs': 10, 'learning_rate': 5e-05, 'latent_dim': 128, 'd_model': 512, 'nhead': 8, 'num_layers': 6, 'max_len': 512, 'weight_decay': 0.01, 'warmup_ratio': 0.1, 'dropout': 0.2}
+=> loading checkpoint 'image_encoder_resnet18_epoch_07.pth'
+=> loaded checkpoint 'image_encoder_resnet18_epoch_07.pth' (epoch 7)
+   Resuming training from epoch 8, best_loss: 0.0825

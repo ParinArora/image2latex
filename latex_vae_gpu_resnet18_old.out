@@ -1,0 +1,19 @@
+Using device: cuda
+Total formulas: 238329 | Vocab size: 95
+Epoch 1/10
+  Train Loss: 4.4672 | Val Loss: 1.7521
+  Saved new best model with val_loss: 1.7521
+Epoch 2/10
+  Train Loss: 0.6631 | Val Loss: 0.0537
+  Saved checkpoint to checkpoints/latex_vae_epoch_002.pth
+  Saved new best model with val_loss: 0.0537
+Epoch 3/10
+  Train Loss: 0.0853 | Val Loss: 0.0201
+  Saved new best model with val_loss: 0.0201
+Epoch 4/10
+  Train Loss: 0.0414 | Val Loss: 0.0207
+  Saved checkpoint to checkpoints/latex_vae_epoch_004.pth
+Epoch 5/10
+  Train Loss: 0.0299 | Val Loss: 0.0172
+  Saved new best model with val_loss: 0.0172
+Epoch 6/10

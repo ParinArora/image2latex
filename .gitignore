@@ -1,0 +1,32 @@
+# Ignore the PRINTED_TEX_230k directory
+PRINTED_TEX_230k/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and checkpoints
+logs/
+runs/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Output files
+output.tex 
