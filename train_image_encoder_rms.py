@@ -1,27 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Train an **image‑encoder** while *re‑using* a pretrained LaTeX‑VAE.
-This is **option‑1** (freeze VAE & share its vocabulary).
-
-Key fixes after user feedback
-─────────────────────────────
-1. The VAE is instantiated **with exactly the same hyper‑parameters**
-(d_model, latent_dim, n_layers, etc.) extracted from the checkpoint,
-removing the previous size‑mismatch errors (512 ↔ 256).
-2. The dataset length (`max_len`) is taken directly from the VAE so the
-token sequences and positional encodings line up.
-3. Still performs a batch‑level sanity‑check that all token IDs are <
-`num_embeddings`.
-
-Usage
-─────
-python train_image_encoder.py \
---latex_file train.txt \
---png_names_file train_pngs.txt \
---png_dir ./pngs \
---vae_ckpt best_latex_vae.pth
-"""
-
 from pathlib import Path
 from typing import Dict, List, Any
 
@@ -143,17 +119,6 @@ class ImageDataset(Dataset):
 # ────────────────────────────────────────────────────────────
 
 def load_vae(ckpt_path: str):
-    """Return (vae, vocab, cfg) with **exact** sizes from checkpoint.
-
-    Strategy when `config` is absent:
-    ▸ `d_model`  - the most common square dimension among weight matrices
-    whose shape is (d_model, d_model).
-    ▸ `latent_dim` - out_features of `to_mu.weight`.
-    ▸ `num_layers` - inferred by counting `decoder.layers.*.norm1.weight`.
-    ▸ `nhead` - choose the largest divisor of d_model ≤ 8 (defaults to 8 if
-                divisible, else 4 or 2).
-    """
-
     from collections import Counter
     from AutoEncoder_Latex import TransformerVAE  # local import
 

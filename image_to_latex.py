@@ -8,17 +8,6 @@ from PIL import Image
 from AutoEncoder_Latex import TransformerVAE, ImageEncoder
 
 def load_vae(ckpt_path: str, device):
-    """Return (vae, vocab, cfg) with **exact** sizes from checkpoint.
-
-    Strategy when `config` is absent:
-    ▸ `d_model`  - the most common square dimension among weight matrices
-      whose shape is (d_model, d_model).
-    ▸ `latent_dim` - out_features of `to_mu.weight`.
-    ▸ `num_layers` - inferred by counting `decoder.layers.*.norm1.weight`.
-    ▸ `nhead` - choose the largest divisor of d_model ≤ 8 (defaults to 8 if
-                 divisible, else 4 or 2).
-    """
-
     from collections import Counter
     from AutoEncoder_Latex import TransformerVAE  # local import
 
@@ -111,7 +100,7 @@ def greedy_decode(vae, z, sos_idx, eos_idx, pad_idx, device, temperature=1.0):
         
         # Decode
     with torch.no_grad():
-            logits = vae.decode(latent_mem, tokens, pad_idx, tgt_key_padding_mask)
+        logits = vae.decode(latent_mem, tokens, pad_idx, tgt_key_padding_mask)
             
         # Get next token probabilities
         next_token_logits = logits[:, -1, :] / temperature
