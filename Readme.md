@@ -9,6 +9,7 @@ A deep learning project that converts mathematical equations from images to LaTe
 - `AutoEncoder_Latex.py`: Core model architecture definitions
 - `latex_to_latex.py`: Utility for LaTeX processing
 - `inspect_loss.py`: Tool for analyzing training losses
+- `models`: Directory with model weights for encoder-decoder
 = `project_report`: contains pdf containing the project report 
 
 ### Contributers
